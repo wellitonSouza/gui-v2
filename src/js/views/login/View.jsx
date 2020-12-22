@@ -31,12 +31,10 @@ const LoginView = ({ location, history }) => {
         password,
       });
       history.push('/dashboard');
-    } catch ({ message }) {
-      // TODO: Handle the exception more appropriately
-      console.error(message);
+    } catch ( {message} ) {
       setHasError(true);
       setMsgError(
-        message.indexOf('404') !== -1 ? 'networkError' : 'loginError',
+        message.indexOf('404') !== -1 ? 'networkError' : "loginError",
       );
     }
   };
